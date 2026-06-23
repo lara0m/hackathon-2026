@@ -1,83 +1,36 @@
-# Pulso - Educational Web Application
-
-Pulso is an educational web application designed to provide real-time feedback on fraction exercises using Supabase and OpenAI. This application aims to enhance personalized learning experiences for both teachers and students.
-
-## Features
-
-- **Real-time Feedback**: Students receive immediate feedback on their answers to fraction exercises.
-- **Teacher Dashboard**: Teachers can monitor student progress and diagnose common errors.
-- **Session Management**: Unique sessions can be created for different classes or groups of students.
-- **Demo Mode**: Simulates student interactions for demonstration purposes.
-
-## Technologies Used
-
-- **Next.js**: A React framework for building server-rendered applications.
-- **Supabase**: An open-source Firebase alternative that provides a backend for the application.
-- **OpenAI**: Utilized for generating feedback and diagnosing student responses.
-
-## Project Structure
-
-```
-Pulso
-├── app
-│   ├── api
-│   │   └── feedback
-│   │       └── route.ts
-│   ├── exercises
-│   │   └── page.tsx
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-├── components
-│   ├── FeedbackDisplay.tsx
-│   └── FractionExercise.tsx
-├── lib
-│   ├── openai.ts
-│   └── supabase.ts
-├── types
-│   └── index.ts
-├── .env.local
-├── next.config.js
-├── package.json
-├── postcss.config.js
-├── tailwind.config.ts
-├── tsconfig.json
-└── README.md
-```
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/pulso.git
-   cd pulso
-   ```
+First, run the development server:
 
-2. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-3. **Set Up Environment Variables**:
-   Create a `.env.local` file in the root directory and add your Supabase and OpenAI credentials:
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   OPENAI_API_KEY=your_openai_api_key
-   ```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-4. **Run the Development Server**:
-   ```bash
-   npm run dev
-   ```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-5. **Access the Application**:
-   Open your browser and navigate to `http://localhost:3000`.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Contributing
+## Learn More
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or features you would like to add.
+To learn more about Next.js, take a look at the following resources:
 
-## License
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
