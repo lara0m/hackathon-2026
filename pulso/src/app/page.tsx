@@ -1,65 +1,64 @@
-import Image from "next/image";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-[#0d1117] text-white font-sans flex flex-col items-center justify-start px-4 py-8 relative overflow-hidden">
+      
+      {/* Navbar Original */}
+      <nav className="w-full max-w-5xl flex items-center justify-between py-4 border-b border-gray-800 mb-12">
+        <div className="flex items-center gap-2 text-xl font-bold">
+          <div className="w-8 h-8 text-[#3ddc84]">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5 5.5 3 7 3 9.5C3 11.5 4 13 5.5 13.5C5 14.5 5 15.5 5.5 16.5C6 18 7.5 19 9 19H12V21H14V19H15C16.5 19 18 18 18.5 16.5C19 15.5 19 14.5 18.5 13.5C20 13 21 11.5 21 9.5C21 7 19 5.5 17.5 5.5C16.5 3.5 14.5 2 12 2Z"/>
+            </svg>
+          </div>
+          <span>Mind<em className="text-[#3ddc84] not-italic font-extrabold">Race</em></span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 bg-[#1a2333] border border-gray-700 px-3 py-1.5 rounded-full text-xs font-semibold text-gray-300">
+            <span className="w-2 h-2 rounded-full bg-[#3ddc84] animate-pulse"></span>
+            Hackathon Mode
+          </div>
         </div>
-      </main>
+      </nav>
+
+      {/* Hero Central */}
+      <div className="text-center mb-10">
+        <div className="w-16 h-16 text-[#3ddc84] mx-auto mb-4 drop-shadow-[0_0_15px_rgba(61,220,132,0.4)]">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5 5.5 3 7 3 9.5C3 11.5 4 13 5.5 13.5C5 14.5 5 15.5 5.5 16.5C6 18 7.5 19 9 19H12V21H14V19H15C16.5 19 18 18 18.5 16.5C19 15.5 19 14.5 18.5 13.5C20 13 21 11.5 21 9.5C21 7 19 5.5 17.5 5.5C16.5 3.5 14.5 2 12 2Z"/>
+          </svg>
+        </div>
+        <h1 className="text-5xl font-extrabold tracking-tight mb-2">Mind<span className="text-[#3ddc84]">Race</span></h1>
+        <p className="text-gray-400 text-lg font-medium">Code. Race. Win.</p>
+      </div>
+
+      {/* Menú de Selección */}
+      <div className="bg-white text-[#1a1a2e] rounded-2xl shadow-xl p-8 w-full max-w-md border border-gray-200">
+        <div className="inline-flex items-center gap-1.5 bg-[#e8fbf0] text-[#2bb86a] text-xs font-bold px-3 py-1 rounded-full mb-4">
+          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16l-3 7 3 7H4V4z"/></svg>
+          Select Role
+        </div>
+        <h2 className="text-2xl font-bold mb-6">¿Quién ingresa a la pista?</h2>
+
+        <div className="flex flex-col gap-4">
+          <Link 
+            href="/student"
+            className="group flex items-center justify-between bg-[#0d1117] text-white hover:bg-[#161b22] font-semibold py-4 px-5 rounded-xl transition-all duration-200 shadow-md"
+          >
+            <span>Soy Alumno (Corredor)</span>
+            <span className="text-[#3ddc84] group-hover:translate-x-1 transition-transform">🏁 →</span>
+          </Link>
+
+          <Link 
+            href="/teacher"
+            className="group flex items-center justify-between bg-gray-100 hover:bg-gray-200 text-[#1a1a2e] font-semibold py-4 px-5 rounded-xl transition-all duration-200 border border-gray-300"
+          >
+            <span>Soy Profesor (Director)</span>
+            <span className="text-gray-500 group-hover:translate-x-1 transition-transform">⏱️ →</span>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

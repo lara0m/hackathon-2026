@@ -77,4 +77,5 @@ Tu salida es ÚNICAMENTE un objeto JSON válido, sin texto adicional, sin markdo
   "difficulty": "${difficulty}",
   "concept": "nombre del concepto que evalúa"
 }
-`;
+
+- IMPORTANTE: Los blancos en el código se marcan SIEMPRE con [BLANK] — nunca uses ___, ..., o cualquier otro formato`;
