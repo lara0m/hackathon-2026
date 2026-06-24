@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
+export const dynamic = 'force-dynamic'
 // POST /api/students — el alumno se une a una sesión con código + nombre + lenguaje
 export async function POST(request: Request) {
   try {

@@ -3,6 +3,7 @@ import { supabase } from '@/lib/supabase';
 import { ERROR_TYPE_LABELS } from '@/lib/prompts';
 import { DashboardData } from '@/types';
 
+export const dynamic = 'force-dynamic'
 // GET /api/dashboard?session_id=xxx — datos agregados para el dashboard del docente
 export async function GET(request: Request) {
   try {
