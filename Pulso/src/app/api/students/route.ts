@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabase } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic'
 // POST /api/students — el alumno se une a una sesión con código + nombre + lenguaje
@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     }
 
     // Verificar que la sesión existe
-    const { data: session, error: sessionError } = await supabase
+    const { data: session, error: sessionError } = await getSupabase()
       .from('sessions')
       .select('id')
       .eq('code', session_code.toUpperCase())
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     }
 
     // Crear el alumno
-    const { data: student, error: studentError } = await supabase
+    const { data: student, error: studentError } = await getSupabase()
       .from('students')
       .insert([
         {

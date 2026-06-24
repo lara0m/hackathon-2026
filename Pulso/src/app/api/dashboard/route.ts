@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabase } from '@/lib/supabase';
 import { ERROR_TYPE_LABELS } from '@/lib/prompts';
 import { DashboardData } from '@/types';
 
@@ -15,7 +15,7 @@ export async function GET(request: Request) {
     }
 
     // Traer todos los alumnos de la sesión
-    const { data: students, error: studentsError } = await supabase
+    const { data: students, error: studentsError } = await getSupabase()
       .from('students')
       .select('*')
       .eq('session_id', session_id)
@@ -35,7 +35,7 @@ export async function GET(request: Request) {
     }
 
     // Traer todas las respuestas de la sesión
-    const { data: answers, error: answersError } = await supabase
+    const { data: answers, error: answersError } = await getSupabase()
       .from('answers')
       .select('*')
       .eq('session_id', session_id)

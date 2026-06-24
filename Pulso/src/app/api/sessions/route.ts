@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabase } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic'
 // Genera un código de 6 letras mayúsculas aleatorio
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
     // Nos aseguramos que el código no exista ya
     while (attempts < 5) {
-      const { data: existing } = await supabase
+      const { data: existing } = await getSupabase()
         .from('sessions')
         .select('id')
         .eq('code', code)
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
       attempts++;
     }
 
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('sessions')
       .insert([{ code, teacher_name, topic: 'programming' }])
       .select()
@@ -64,7 +64,7 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: 'code es requerido' }, { status: 400 });
     }
 
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('sessions')
       .select('*')
       .eq('code', code.toUpperCase())

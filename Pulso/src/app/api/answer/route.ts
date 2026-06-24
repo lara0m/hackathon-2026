@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { openai } from '@/lib/openai';
-import { supabase } from '@/lib/supabase';
+import { getSupabase } from '@/lib/supabase';
 import { DIAGNOSIS_SYSTEM_PROMPT } from '@/lib/prompts';
 import { DiagnosisResult } from '@/types';
 
@@ -68,7 +68,7 @@ Diagnosticá esta respuesta y devolvé el JSON.
     }
 
     // Guardar la respuesta y el diagnóstico en Supabase
-    const { data: answer, error: answerError } = await supabase
+    const { data: answer, error: answerError } = await getSupabase()
       .from('answers')
       .insert([
         {
@@ -92,7 +92,7 @@ Diagnosticá esta respuesta y devolvé el JSON.
 
     // Si la respuesta es correcta, actualizar score y ejercicios completados del alumno
     if (diagnosis.is_correct) {
-      await supabase.rpc('increment_student_score', {
+      await getSupabase().rpc('increment_student_score', {
         p_student_id: student_id,
         p_score_delta: 10,
       });
