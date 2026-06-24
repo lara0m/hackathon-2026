@@ -1,51 +1,42 @@
 import { NextResponse } from 'next/server';
 import { getSupabase } from '@/lib/supabase';
 
-export const dynamic = 'force-dynamic'
-// POST /api/students — el alumno se une a una sesión con código + nombre + lenguaje
 export async function POST(request: Request) {
   try {
-    const { session_code, name, language } = await request.json();
+    console.log("1. Recibiendo request en /api/students...");
+    const body = await request.json();
+    console.log("2. Body recibido:", body);
 
-    if (!session_code || !name || !language) {
-      return NextResponse.json(
-        { error: 'session_code, name y language son requeridos' },
-        { status: 400 }
-      );
-    }
+    const { sessionCode, name, language } = body;
 
-    // Verificar que la sesión existe
+    console.log(`3. Buscando sesión con código: ${sessionCode}...`);
     const { data: session, error: sessionError } = await getSupabase()
       .from('sessions')
       .select('id')
-      .eq('code', session_code.toUpperCase())
+      .eq('code', sessionCode)
       .single();
 
     if (sessionError || !session) {
-      return NextResponse.json({ error: 'Sesión no encontrada. Verificá el código.' }, { status: 404 });
+      console.log("4. Error o sesión no encontrada:", sessionError);
+      return NextResponse.json({ error: 'Código de sesión inválido' }, { status: 404 });
     }
 
-    // Crear el alumno
+    console.log(`5. Sesión encontrada (ID: ${session.id}). Creando alumno...`);
     const { data: student, error: studentError } = await getSupabase()
       .from('students')
-      .insert([
-        {
-          session_id: session.id,
-          name: name.trim(),
-          language,
-          score: 0,
-          exercises_completed: 0,
-        },
-      ])
+      .insert([{ session_id: session.id, name, language }])
       .select()
       .single();
 
     if (studentError) {
-      return NextResponse.json({ error: studentError.message }, { status: 500 });
+      console.log("6. Error al crear alumno en la BD:", studentError);
+      throw studentError;
     }
 
-    return NextResponse.json({ student }, { status: 201 });
-  } catch (err) {
-    return NextResponse.json({ error: 'Error interno del servidor' }, { status: 500 });
+    console.log("7. Alumno creado con éxito!");
+    return NextResponse.json(student);
+  } catch (error: any) {
+    console.error("ERROR CAPTURADO EN EL CATCH:", error);
+    return NextResponse.json({ error: error.message || 'Error interno del servidor' }, { status: 500 });
   }
 }
