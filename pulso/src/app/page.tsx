@@ -30,7 +30,7 @@ export default function Home() {
           </svg>
         </div>
         <h1 className="text-5xl font-extrabold tracking-tight mb-2">Mind<span className="text-[#3ddc84]">Race</span></h1>
-        <p className="text-gray-400 text-lg font-medium">Code. Race. Win.</p>
+        <p className="text-gray-400 text-lg font-medium">Acelera tu potencial</p>
         {/* --- DESCRIPCIÓN DEL PROYECTO (HERO) --- */}
         <div className="text-center max-w-2xl mx-auto mb-10 px-4">
           <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#3ddc84] to-[#4ade80] mb-4 drop-shadow-lg">
