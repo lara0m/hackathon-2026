@@ -68,6 +68,17 @@ REGLAS:
 - Dificultad "medium": 2-3 blancos, condicionales o loops simples
 - Dificultad "hard": 3-4 blancos, funciones, listas, lógica combinada
 
+REGLAS CRÍTICAS PARA EL CÓDIGO BASE (starter_code):
+1. El marcador [BLANK] NUNCA debe colocarse dentro de comillas (strings), a menos que el ejercicio sea explícitamente sobre manipular texto.
+2. Si pides usar la función print() en Python, usa separación por comas o f-strings, NUNCA pidas concatenar sumando variables numéricas dentro de las comillas. Ejemplo CORRECTO: print('La suma es:', [BLANK]).
+3. El código que resulta de reemplazar [BLANK] con la respuesta correcta DEBE compilar perfectamente y no tener errores de sintaxis.
+
+REGLA PARA LAS PISTAS (hint):
+- Siempre debes generar un campo "hint" en tu respuesta JSON.
+- El "hint" DEBE ser una pista ESPECÍFICA para el código que acabas de crear. 
+- Por ejemplo, si el ejercicio es sobre sumar variables, el hint debe decir: "Recuerda usar el operador '+' entre ambas variables numéricas". 
+- NUNCA des la respuesta directa en el hint, solo una ayuda guiada.
+
 Tu salida es ÚNICAMENTE un objeto JSON válido, sin texto adicional, sin markdown, sin backticks:
 
 {

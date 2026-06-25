@@ -31,6 +31,23 @@ export default function Home() {
         </div>
         <h1 className="text-5xl font-extrabold tracking-tight mb-2">Mind<span className="text-[#3ddc84]">Race</span></h1>
         <p className="text-gray-400 text-lg font-medium">Code. Race. Win.</p>
+        {/* --- DESCRIPCIÓN DEL PROYECTO (HERO) --- */}
+        <div className="text-center max-w-2xl mx-auto mb-10 px-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#3ddc84] to-[#4ade80] mb-4 drop-shadow-lg">
+            Aprende a programar a toda velocidad.
+          </h1>
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+            MindRace es la plataforma interactiva donde nuestra API de ChatGPT lanza desafíos de código y los docentes pueden ver el progreso tiempo real. Los alumnos pueden opcionalmente competir por ser los primeros en cruzar la meta. <strong className="text-gray-200">Ingresa tu código de sesión y encendé los motores.</strong>
+          </p>
+          
+          {/* Etiquetas/Badges para dar más contexto rápido */}
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs text-gray-300 font-medium">🎮 Gamificado</span>
+            <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs text-gray-300 font-medium">⚡ Tiempo Real</span>
+            <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs text-gray-300 font-medium">🤖 Feedback IA</span>
+          </div>
+        </div>
+        {/* --------------------------------------- */}
       </div>
 
       {/* Menú de Selección */}
