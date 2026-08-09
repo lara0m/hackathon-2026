@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
@@ -7,11 +8,13 @@ export default function Home() {
       {/* Navbar Original */}
       <nav className="w-full max-w-5xl flex items-center justify-between py-4 border-b border-gray-800 mb-12">
         <div className="flex items-center gap-2 text-xl font-bold">
-          <div className="w-8 h-8 text-[#3ddc84]">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5 5.5 3 7 3 9.5C3 11.5 4 13 5.5 13.5C5 14.5 5 15.5 5.5 16.5C6 18 7.5 19 9 19H12V21H14V19H15C16.5 19 18 18 18.5 16.5C19 15.5 19 14.5 18.5 13.5C20 13 21 11.5 21 9.5C21 7 19 5.5 17.5 5.5C16.5 3.5 14.5 2 12 2Z"/>
-            </svg>
-          </div>
+          <Image
+            src="/mindrace-logo.png"
+            alt="Logo de MindRace"
+            width={32}
+            height={32}
+            className="rounded-md object-cover"
+          />
           <span>Mind<em className="text-[#3ddc84] not-italic font-extrabold">Race</em></span>
         </div>
         <div className="flex items-center gap-3">
@@ -24,11 +27,13 @@ export default function Home() {
 
       {/* Hero Central */}
       <div className="text-center mb-10">
-        <div className="w-16 h-16 text-[#3ddc84] mx-auto mb-4 drop-shadow-[0_0_15px_rgba(61,220,132,0.4)]">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5 5.5 3 7 3 9.5C3 11.5 4 13 5.5 13.5C5 14.5 5 15.5 5.5 16.5C6 18 7.5 19 9 19H12V21H14V19H15C16.5 19 18 18 18.5 16.5C19 15.5 19 14.5 18.5 13.5C20 13 21 11.5 21 9.5C21 7 19 5.5 17.5 5.5C16.5 3.5 14.5 2 12 2Z"/>
-          </svg>
-        </div>
+        <Image
+          src="/mindrace-logo.png"
+          alt="Logo principal de MindRace"
+          width={96}
+          height={96}
+          className="mx-auto mb-4 rounded-xl object-cover drop-shadow-[0_0_15px_rgba(61,220,132,0.4)]"
+        />
         <h1 className="text-5xl font-extrabold tracking-tight mb-2">Mind<span className="text-[#3ddc84]">Race</span></h1>
         <p className="text-gray-400 text-lg font-medium">Acelera tu potencial</p>
         {/* --- DESCRIPCIÓN DEL PROYECTO (HERO) --- */}
